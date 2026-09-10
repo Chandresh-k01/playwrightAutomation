@@ -1,0 +1,58 @@
+Register Response Status: 201
+Register Response: {
+  statusCode: 201,
+  data: {
+    _id: '6a97ff22f27296278678a275',
+    username: 'chandresh0001',
+    email: 'chandreshkhatri02@gmail.com',
+    fullname: 'chandresh khatri',
+    createdAt: '2026-09-02T10:49:06.909Z',
+    updatedAt: '2026-09-02T10:49:06.909Z',
+    __v: 0
+  },
+  message: 'User registered Successfully',
+  success: true
+}
+Login Response: {
+  statusCode: 200,
+  data: {
+    user: {
+      _id: '6a97ff22f27296278678a275',
+      username: 'chandresh0001',
+      email: 'chandreshkhatri02@gmail.com',
+      fullname: 'chandresh khatri',
+      createdAt: '2026-09-02T10:49:06.909Z',
+      updatedAt: '2026-09-02T10:49:08.160Z',
+      __v: 0
+    },
+    accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk3ZmYyMmYyNzI5NjI3ODY3OGEyNzUiLCJlbWFpbCI6ImNoYW5kcmVzaGtoYXRyaTAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhbmRyZXNoIGtoYXRyaSIsImlhdCI6MTc4ODM0NjE0OCwiZXhwIjoxNzg4NDMyNTQ4fQ.tvVI-Jg377SMGlF5mYvhWIMgTet-ngO_hEYJBHicAQE',
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk3ZmYyMmYyNzI5NjI3ODY3OGEyNzUiLCJlbWFpbCI6ImNoYW5kcmVzaGtoYXRyaTAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhbmRyZXNoIGtoYXRyaSIsImlhdCI6MTc4ODM0NjE0OCwiZXhwIjoxNzg5MjEwMTQ4fQ.UqIiSnnp1sF5o-3GwsRdw37XvznwhlC6TDcP2CzL8hM'
+  },
+  message: 'User Logged in successfully',
+  success: true
+}
+GET Response Status: 200
+PUT Response Status: 200
+PATCH Response Status: 200
+PATCH Response: {
+  statusCode: 200,
+  data: {
+    _id: '6a97ff22f27296278678a275',
+    username: 'chandresh0001',
+    email: 'chandresh10012@gmail.com',
+    fullname: 'chandresh khatri',
+    createdAt: '2026-09-02T10:49:06.909Z',
+    updatedAt: '2026-09-02T10:49:10.337Z',
+    __v: 0,
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk3ZmYyMmYyNzI5NjI3ODY3OGEyNzUiLCJlbWFpbCI6ImNoYW5kcmVzaGtoYXRyaTAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhbmRyZXNoIGtoYXRyaSIsImlhdCI6MTc4ODM0NjE0OCwiZXhwIjoxNzg5MjEwMTQ4fQ.UqIiSnnp1sF5o-3GwsRdw37XvznwhlC6TDcP2CzL8hM'
+  },
+  message: 'User details updated successfully',
+  success: true
+}
+DELETE Response Status: 200
+DELETE Response: {
+  statusCode: 200,
+  data: {},
+  message: 'User account deleted successfully',
+  success: true
+}

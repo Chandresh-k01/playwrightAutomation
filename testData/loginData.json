@@ -1,0 +1,27 @@
+{ 
+
+"validUsers": [ 
+{ 
+"username": "standard_user", 
+"password": "secret_sauce",
+"expected": "Swag Labs"
+}, 
+{
+    "username": "error_user", 
+    "password": "secret_sauce",
+    "expected":"Swag Labs"
+} 
+],
+"inValidUsers": [
+  {
+    "username": "",
+    "password": "",
+    "expected": "validation"
+  },
+  {
+    "username": "   ",
+    "password": "",
+    "expected": "validation"
+  }
+]
+}

@@ -1,0 +1,34 @@
+Register Response Status: 201
+Register Response: {
+  statusCode: 201,
+  data: {
+    _id: '6a980049f27296278678a27d',
+    username: 'chandresh0001',
+    email: 'chandreshkhatri02@gmail.com',
+    fullname: 'chandresh khatri',
+    createdAt: '2026-09-02T10:54:01.870Z',
+    updatedAt: '2026-09-02T10:54:01.870Z',
+    __v: 0
+  },
+  message: 'User registered Successfully',
+  success: true
+}
+Login Response: {
+  statusCode: 200,
+  data: {
+    user: {
+      _id: '6a980049f27296278678a27d',
+      username: 'chandresh0001',
+      email: 'chandreshkhatri02@gmail.com',
+      fullname: 'chandresh khatri',
+      createdAt: '2026-09-02T10:54:01.870Z',
+      updatedAt: '2026-09-02T10:54:03.141Z',
+      __v: 0
+    },
+    accessToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk4MDA0OWYyNzI5NjI3ODY3OGEyN2QiLCJlbWFpbCI6ImNoYW5kcmVzaGtoYXRyaTAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhbmRyZXNoIGtoYXRyaSIsImlhdCI6MTc4ODM0NjQ0MywiZXhwIjoxNzg4NDMyODQzfQ.mXicdpTfGcjk-rCv5MM3mADafl0T4NcqROWuv7WHTv0',
+    refreshToken: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2YTk4MDA0OWYyNzI5NjI3ODY3OGEyN2QiLCJlbWFpbCI6ImNoYW5kcmVzaGtoYXRyaTAyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoiY2hhbmRyZXNoIGtoYXRyaSIsImlhdCI6MTc4ODM0NjQ0MywiZXhwIjoxNzg5MjEwNDQzfQ.QwHCULfcrIYXLXIksQoac9kKxc1ZDPFjrk4HMhX85Ao'
+  },
+  message: 'User Logged in successfully',
+  success: true
+}
+GET Response Status: 200

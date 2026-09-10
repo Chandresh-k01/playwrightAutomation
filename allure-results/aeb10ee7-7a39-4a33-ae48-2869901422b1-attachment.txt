@@ -1,0 +1,7 @@
+Register Response Status: 409
+Register Response: {
+  statusCode: 409,
+  success: false,
+  message: 'User already exists',
+  errors: []
+}

@@ -1,0 +1,144 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: Login.spec.js >> Login Invalid Test Case    
+- Location: tests\Login.spec.js:90:9
+
+# Error details
+
+```
+ReferenceError: loginPage is not defined
+```
+
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - generic [ref=e4]: Swag Labs
+  - generic [ref=e5]:
+    - generic [ref=e9]:
+      - textbox "Username" [ref=e11]
+      - textbox "Password" [ref=e15]
+      - heading [level=3] [ref=e19]:
+        - button [ref=e20] [cursor=pointer]
+        - text: "Epic sadface: Username and password do not match any user in this service"
+      - button "Login" [active] [ref=e23] [cursor=pointer]
+    - generic [ref=e25]:
+      - generic [ref=e26]:
+        - heading "Accepted usernames are:" [level=4] [ref=e27]
+        - text: standard_userlocked_out_userproblem_userperformance_glitch_usererror_uservisual_user
+      - generic [ref=e28]:
+        - heading "Password for all users:" [level=4] [ref=e29]
+        - text: secret_sauce
+```
+
+# Test source
+
+```ts
+  1   | // import {test, expect} from '@playwright/test';
+  2   | // test('Login Test Case', async({ page })=> {
+  3   | //     await page.goto('https://www.saucedemo.com/');
+  4   | //     await page.fill('#user-name', 'standard_user');
+  5   | //     await page.fill('#password', 'secret_sauce');
+  6   | //     await page.click('#login-button');
+  7   | 
+  8   | //     await expect(page.locator('.title')).toHaveText('Products');
+  9   |     
+  10  | // });
+  11  | 
+  12  | // test('invalid username and valid password Test Case', async({ page })=> {
+  13  | //     await page.goto('https://www.saucedemo.com/');
+  14  | //     await page.fill('#user-name', 'stand2rd_user');
+  15  | //     await page.fill('#password', 'secret_sauce');
+  16  | //     await page.click('#login-button');
+  17  | 
+  18  | //     await expect(page.locator('.error-message-container')).toContainText('Epic sadface: Username and password do not match any user in this service');
+  19  |    
+  20  | // });
+  21  | 
+  22  | // test('valid username and invalid password Test Case', async({ page })=> {
+  23  | //     await page.goto('https://www.saucedemo.com/');
+  24  | //     await page.fill('#user-name', 'standard_user');
+  25  | //     await page.fill('#password', 'secret_sauce1');
+  26  | //     await page.click('#login-button');
+  27  | 
+  28  | //     await expect(page.locator('.error-message-container')).toContainText('Epic sadface: Username and password do not match any user in this service');
+  29  |    
+  30  | // });
+  31  | 
+  32  | // test('invalid username and invalid password Test Case', async({ page })=> {
+  33  | //     await page.goto('https://www.saucedemo.com/');
+  34  | //     await page.fill('#user-name', 'stand2rd_user');
+  35  | //     await page.fill('#password', 'secret_sauce1');
+  36  | //     await page.click('#login-button');
+  37  | 
+  38  | //     await expect(page.locator('.error-message-container')).toContainText('Epic sadface: Username and password do not match any user in this service');
+  39  |    
+  40  | // });
+  41  | 
+  42  | // test('empty username and empty password Test Case', async({ page })=> {
+  43  | //     await page.goto('https://www.saucedemo.com/');
+  44  | //     await page.fill('#user-name', ' ');
+  45  | //     await page.fill('#password', ' ');
+  46  | //     await page.click('#login-button');
+  47  | 
+  48  | //     await expect(page.locator('.error-message-container')).toContainText('Epic sadface: Username is required');
+  49  |    
+  50  | // });
+  51  | 
+  52  | 
+  53  | 
+  54  | // import { test, expect } from '@playwright/test'; 
+  55  | // import loginData from '../testdata/loginData.json'; 
+  56  | // test('Login Test Case', async ({ page }) => { 
+  57  | // const username = loginData.validUsers[0].username; 
+  58  | // const password = loginData.validUsers[0].password; 
+  59  | // await page.goto('https://www.saucedemo.com/'); 
+  60  | // await page.fill('#user-name', username); 
+  61  | // await page.fill('#password', password); 
+  62  | // await page.click('#login-button'); 
+  63  | // await expect(page.locator('.title').first()).toHaveText("Products"); 
+  64  | // });
+  65  | 
+  66  | // loginData.validUsers.forEach((data) => { 
+  67  | // test(`Login Test for ${data.username}`, async ({ page }) => { 
+  68  | // await page.goto('https://www.saucedemo.com/', { waitUntil: 
+  69  | // 'domcontentloaded' }); 
+  70  | // await page.fill('#user-name', data.username); 
+  71  | // await page.fill('#password', data.password); 
+  72  | // await page.click('#login-button'); 
+  73  | // await expect(page.locator('.app_logo')).toHaveText("Swag Labs"); 
+  74  | // }); 
+  75  | // });
+  76  | 
+  77  | import {test, expect} from '@playwright/test'; 
+  78  | import loginData from '../testdata/loginData.json'; 
+  79  | import LoginPage from '../pages/LoginPage'; 
+  80  | test('Login Test Case using with Valid User' , async ({page}) => { 
+  81  | const login = new LoginPage(page); 
+  82  | //selecting first dataset from JSON 
+  83  | const data = loginData.validUsers[0]; 
+  84  | await login.gotoURL(); 
+  85  | await login.login(data.username, data.password); 
+  86  | await expect((login.message).first()).toHaveText(data.expected); 
+  87  | });
+  88  | 
+  89  | loginData.inValidUsers.forEach((data)=>{
+  90  |     test(`Login Invalid Test Case ${data.username}`,async({page})=>{
+  91  |         const login = new LoginPage(page)
+  92  |         await login.gotoURL()
+  93  |         await login.login(data.username,data.password)
+  94  |         await expect(page.locator('//*[@id="login_button_container"]/div/form/div[3]')).toBeVisible()
+> 95  |         await loginPage.attachScreenshot('.app_logo'); 
+      |         ^ ReferenceError: loginPage is not defined
+  96  |     })
+  97  | })
+  98  | 
+  99  | 
+  100 | 
+```

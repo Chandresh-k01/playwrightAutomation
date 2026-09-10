@@ -1,0 +1,10 @@
+{
+    "homePageTests": [
+        {
+            "username": "standard_user",
+            "password": "secret_sauce",
+            "expectedLogo": "Swag Labs",
+            "expectedProductCount": 6
+        }
+    ]
+}

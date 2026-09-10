@@ -1,0 +1,28 @@
+{
+  "baseURL": "https://api-testing-postman.vercel.app/api/v1",
+
+  "endpoints": {
+    "login": "/users/login",
+    "currentUser": "/users/current-user",
+    "replaceAccount": "/users/replace-account",
+    "updateAccount": "/users/update-account",
+    "deleteAccount": "/users/delete-account"
+  },
+
+  "user": {
+    "email": "chandreshkhatri02gmail.com",
+    "username": "chandresh0001",
+    "password": "ch@ndu12345"
+  },
+
+  "updateUser": {
+    "fullname": "chandresh khatri",
+    "email": "chandresh10012@gmail.com",
+    "username": "chandresh0001"
+  },
+
+  "patchUser": {
+    "fullname": "chandresh khatri",
+    "email": "chandresh10012@gmail.com"
+  }
+}
