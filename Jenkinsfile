@@ -4,10 +4,10 @@ pipeline {
     stages {
 
         stage('Check Docker') {
-            steps {
-                sh 'docker version'
-            }
-        }
+    steps {
+        bat 'docker version'
+    }
+}
 
         stage('Checkout GitHub') {
             steps {
